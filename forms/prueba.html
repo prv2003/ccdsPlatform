@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; /* Color de fondo del cuerpo */
+    }
+
+    #contenedor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* 100% del viewport height */
+      background: url('home2.png') center center/cover no-repeat; /* Ajusta la imagen de fondo */
+    }
+
+    #formulario {
+      background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para hacer el formulario más legible */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }
+
+    /* Puedes personalizar más estilos según tus necesidades */
+
+  </style>
+  <title>Página con Formulario</title>
+</head>
+<body>
+
+  <div id="contenedor">
+    <div id="formulario">
+      <!-- Tu formulario HTML aquí -->
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email">
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
