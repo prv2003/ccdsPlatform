@@ -165,8 +165,9 @@ $_SESSION['ultima_actividad'] = time();
     
     <section id="verificaciones">
         <article>
-            <h2>Verificaciones Realizadas</h2>
-            <p>Detalles sobre las verificaciones realizadas por el verificador.</p>
+            <h2>Verificaciones</h2>
+            <p>Próximas verificaciones: </p>
+            <p>Verificaciones finalizadas: </p>
         </article>
     </section>
 
