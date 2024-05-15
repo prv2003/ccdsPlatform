@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 
 if (!isset($_SESSION['email'])) {
@@ -15,6 +17,16 @@ $stmtVerifier->bind_param("s", $email);
 $stmtVerifier->execute();
 $resultadoVerifier = $stmtVerifier->get_result();
 $fila = $resultadoVerifier->fetch_assoc();
+
+$stmtVerification = $conexion->prepare("SELECT * FROM verification");
+$stmtVerification->execute();
+$resultadoVerificacion = $stmtVerification->get_result();
+$verificaciones = $resultadoVerificacion->fetch_assoc();
+
+$countVerification = $conexion->prepare("SELECT COUNT(*) FROM verification WHERE active != 0");
+$countVerification->execute();
+$resultVerificacion = $countVerification->get_result();
+$count = $resultadoVerificacion->fetch_assoc();
 
 $nombreUsuario = $fila['name'];
 
@@ -83,6 +95,9 @@ $_SESSION['ultima_actividad'] = time();
                     <li class="nav-item">
                         <a class="nav-link" href="#usuarios">Gestionar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="verifier.php">Salir</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -107,7 +122,7 @@ $_SESSION['ultima_actividad'] = time();
                     <div class="col-md-4">
                         <div class="section">
                             <h4>Verificaciones</h4>
-                            <!-- Contenido de la sección de Verificaciones -->
+                            <p>Actualmente hay <?php echo ($count!=0)?$count:0?> verificaciones activas</p>
                         </div>
                     </div>
                 </div>
