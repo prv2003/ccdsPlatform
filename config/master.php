@@ -96,7 +96,7 @@ $_SESSION['ultima_actividad'] = time();
                         <a class="nav-link" href="#usuarios">Gestionar Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="verifier.php">Salir</a>
+                        <a class="nav-link" href="verifier.php">Salir</a>  
                     </li>
                 </ul>
             </div>
